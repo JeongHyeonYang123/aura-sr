@@ -769,7 +769,7 @@ def merge_tiles(tiles, h_chunks, w_chunks, chunk_size=64):
     return merged
 
 class AuraSR:
-    def __init__(self, config: dict[str, Any], device: str = "cuda"):
+    def __init__(self, config: dict[str, Any], device: str = "cpu"):
         self.upsampler = UnetUpsampler(**config).to(device)
         self.input_image_size = config["input_image_size"]
 
